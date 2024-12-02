@@ -1,5 +1,5 @@
-# UI_Gradiant
-UI_Gradiant
+# UI_Gradient
+UI_Gradient
 1. Unity UI에 Bloom 효과 넣기
 2. Gradiant 넣기.
 3. 최종적으로 UI로 광선검 만들기
