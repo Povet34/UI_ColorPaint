@@ -53,7 +53,7 @@ Material:
     m_Colors:
     - _ClipRect: {r: 0, g: 0, b: 0, a: 0}
     - _Emission: {r: 1, g: 1, b: 1, a: 1}
-    - _EndColor: {r: 0.9088212, g: 0.16685535, b: 0.6937831, a: 1}
-    - _StartColor: {r: 0.7367553, g: 0.9337685, b: 0.24869886, a: 1}
+    - _EndColor: {r: 0.65410393, g: 0.7195144, b: 0.47032398, a: 1}
+    - _StartColor: {r: 0.33404472, g: 0.8433312, b: 0.058078893, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
