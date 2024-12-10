@@ -1,16 +1,49 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class PaintArea : MonoBehaviour
+public class PaintArea : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     [SerializeField] int totalCount;
     [SerializeField] FrameNode frameNodePrefab;
+    [SerializeField] GraphicRaycaster graphicRaycaster;
 
     List<FrameNode> frameNodes = new List<FrameNode>();
+    Brush brush;
+    PointerEventData pointerEventData;
+    EventSystem eventSystem;
+
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+    }
+
+    public void OnDrag(PointerEventData eventData)
+    {
+        pointerEventData.position = eventData.position;
+        List<RaycastResult> results = new List<RaycastResult>();
+        graphicRaycaster.Raycast(pointerEventData, results);
+
+        foreach (RaycastResult result in results)
+        {
+            IPaintable paintable = result.gameObject.GetComponent<IPaintable>();
+            if (paintable != null)
+            {
+                paintable.Paint(brush.GetColor());
+            }
+        }
+    }
+
+    public void OnEndDrag(PointerEventData eventData)
+    {
+    }
 
     private void Start()
     {
+        brush = FindAnyObjectByType<Brush>();
+        eventSystem = GetComponent<EventSystem>();
+        pointerEventData = new PointerEventData(eventSystem);
+
         for (int i = 0; i < totalCount; i++)
         {
             FrameNode node = Instantiate(frameNodePrefab, transform);

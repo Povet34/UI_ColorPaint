@@ -3,12 +3,11 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public partial class FrameNode : MonoBehaviour, IPaintable, IPointerDownHandler, IPointerUpHandler, IPointerMoveHandler
+public partial class FrameNode : MonoBehaviour, IPaintable
 {
     [SerializeField] TextMeshProUGUI indexText;
     Image paintImage;
 
-    Brush brush;
 
     public Color Color { get; set; }
     private int index;
@@ -38,36 +37,5 @@ public partial class FrameNode : MonoBehaviour, IPaintable, IPointerDownHandler,
     private void SetIndexText(int index)
     {
         indexText.text = index.ToString();
-    }
-
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        SetBrush();
-
-        brush.brushOn = true;
-        Paint(brush.GetColor());
-    }
-
-    public void OnPointerUp(PointerEventData eventData)
-    {
-        SetBrush();
-
-        brush.brushOn = false;
-    }
-
-    public void OnPointerMove(PointerEventData eventData)
-    {
-        SetBrush();
-
-        if (brush.brushOn)
-        {
-            Paint(brush.GetColor());
-        }
-    }
-
-    private void SetBrush()
-    {
-        if (!brush)
-            brush = FindAnyObjectByType<Brush>();
     }
 }
