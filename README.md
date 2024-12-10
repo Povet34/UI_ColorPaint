@@ -12,6 +12,7 @@
 1. 중간의 Palette panel에서, brush 색상 선택
 2. 아래의 Paint panel에서 Image에 현재 brush의 색상으로 SetColor
 3. 위의 Summation panel에서 색칠된 Paint panel에 맞게 색상 동기화
+4. Summation Panel에 동기화시, AllPaint/RegionPaint mode 선택
 
 ### Result
 ![image](https://github.com/user-attachments/assets/dd6947d0-2151-45aa-a36f-9daef3c62c79)
