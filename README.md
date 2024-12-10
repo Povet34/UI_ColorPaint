@@ -4,9 +4,9 @@
 1. Unity UI에 Bloom 효과 넣기
 2. Gradiant 넣기.
 3. 최종적으로 UI로 광선검 만들기
-   ![image](https://github.com/user-attachments/assets/e5fb52c2-2829-400e-8d4c-9e9665b3f723)
+![image](https://github.com/user-attachments/assets/e5fb52c2-2829-400e-8d4c-9e9665b3f723)
 
-5. 참고할 내용
+참고할 내용
 - https://www.youtube.com/watch?v=mGd3nYXj1Oc&t=54s
 - https://www.youtube.com/watch?v=OAfpDaAKVSE
 - https://www.youtube.com/watch?v=S6eRVwAtfOM
