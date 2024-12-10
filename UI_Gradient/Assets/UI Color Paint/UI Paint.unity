@@ -1093,7 +1093,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   viewUpdateMode: 1
-  totalCount: 800
+  totalCount: 1500
   frameNodePrefab: {fileID: 1704452219465564735, guid: 788aeabf3732eb946b0c165093601812, type: 3}
   graphicRaycaster: {fileID: 1143122865}
   summationView: {fileID: 284038043}
