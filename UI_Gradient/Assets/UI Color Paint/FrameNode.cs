@@ -10,7 +10,7 @@ public partial class FrameNode : MonoBehaviour, IPaintable
 
 
     public Color Color { get; set; }
-    private int index;
+    public int index { get; set; }
 
     private void Awake()
     {
