@@ -43,7 +43,7 @@ Material:
     m_Floats:
     - _AlphaClip: 0.5
     - _ColorMask: 15
-    - _ErodingTime: 0.2501125
+    - _ErodingTime: 0.5897309
     - _Speed: 1.16
     - _Stencil: 0
     - _StencilComp: 8
@@ -54,7 +54,7 @@ Material:
     - _UIMaskSoftnessY: 1
     m_Colors:
     - _ClipRect: {r: 0, g: 0, b: 0, a: 0}
-    - _EndColor: {r: 0.85937726, g: 0.30479518, b: 0.56107074, a: 1}
-    - _StartColor: {r: 0.34341004, g: 0.9003525, b: 0.7708899, a: 1}
+    - _EndColor: {r: 0.567494, g: 0.18897656, b: 0.18598689, a: 1}
+    - _StartColor: {r: 0.5091937, g: 0.44041413, b: 0.84511197, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
