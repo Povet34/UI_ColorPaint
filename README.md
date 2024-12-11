@@ -23,7 +23,7 @@
 2. Start/End Color가 Offset X로 계속 이동하기.
 
 ### Result
-![flow](https://github.com/user-attachments/assets/8a6e3440-6e46-4c24-85c9-5c25995c9150)
+![flow](https://github.com/user-attachments/assets/27dc91a2-5442-455e-98f7-e7dff7eca14b)
 
 
 참고할 내용
