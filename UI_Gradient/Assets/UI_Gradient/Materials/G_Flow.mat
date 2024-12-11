@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Eroding
-  m_Shader: {fileID: -6465566751694194690, guid: 2f935087da6c5fb49afb26a2c20a1bf7, type: 3}
+  m_Name: G_Flow
+  m_Shader: {fileID: -6465566751694194690, guid: a70daedb22fb7f840879718d95babc7a, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -24,7 +24,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 10309, guid: 0000000000000000f000000000000000, type: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -43,8 +43,8 @@ Material:
     m_Floats:
     - _AlphaClip: 0.5
     - _ColorMask: 15
-    - _ErodingTime: 1
-    - _Speed: 1.16
+    - _FlowSpeed: 5
+    - _Speed: 5
     - _Stencil: 0
     - _StencilComp: 8
     - _StencilOp: 0
@@ -54,7 +54,8 @@ Material:
     - _UIMaskSoftnessY: 1
     m_Colors:
     - _ClipRect: {r: 0, g: 0, b: 0, a: 0}
-    - _EndColor: {r: 0.37056902, g: 0.28857747, b: 0.9700588, a: 1}
-    - _StartColor: {r: 0.27300754, g: 0.65767807, b: 0.7489901, a: 1}
+    - _Emission: {r: 1, g: 1, b: 1, a: 1}
+    - _EndColor: {r: 0.96862745, g: 0.094737954, b: 0.07058823, a: 1}
+    - _StartColor: {r: 1, g: 0.79607844, b: 0, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
