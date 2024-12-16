@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,10 +18,10 @@ public class SummationView : MonoBehaviour
     }
 
 
-    RawImage viewImage;
-    List<Color> colors;
+    protected RawImage viewImage;
+    protected List<Color> colors;
 
-    private void Start()
+    protected void Start()
     {
         viewImage = GetComponent<RawImage>();
     }
@@ -55,7 +56,7 @@ public class SummationView : MonoBehaviour
         viewImage.texture = CreateColorArrayTexture(colors);
     }
 
-    Texture2D CreateColorArrayTexture(List<Color> colors)
+    protected Texture2D CreateColorArrayTexture(List<Color> colors)
     {
         int length = colors.Count;
         Texture2D texture = new Texture2D(length, 1, TextureFormat.RGBA32, false);
@@ -65,5 +66,10 @@ public class SummationView : MonoBehaviour
         }
         texture.Apply();
         return texture;
+    }
+
+    public List<Color> GetColors()
+    {
+        return colors;
     }
 }

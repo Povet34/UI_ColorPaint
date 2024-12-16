@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Palette : MonoBehaviour
 {
-    public readonly Color[] Colors = new Color[]
+    public static readonly Color[] Colors = new Color[]
     {
         Color.red,
         Color.green,
@@ -30,4 +30,9 @@ public class Palette : MonoBehaviour
             paletteColors.Add(paletteColor);
         }
     }
+
+    public List<PaletteColor> GetPaletteColors()
+    {
+        return paletteColors;
+    }   
 }

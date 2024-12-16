@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -6,10 +7,10 @@ using UnityEngine.UI;
 
 public class PaintArea : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    public enum ViewUpdateMode{ RegionPaint, AllPaint }
+    public enum ViewUpdateMode { RegionPaint, AllPaint }
+    public int totalCount;
 
     [SerializeField] ViewUpdateMode viewUpdateMode;
-    [SerializeField] int totalCount;
     [SerializeField] FrameNode frameNodePrefab;
     [SerializeField] GraphicRaycaster graphicRaycaster;
     [SerializeField] SummationView summationView;
@@ -72,16 +73,20 @@ public class PaintArea : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         }
     }
 
-    private void Start()
+    public void EditStart(List<Color> colors)
     {
+        gameObject.SetActive(true);
+
         brush = FindAnyObjectByType<Brush>();
         eventSystem = GetComponent<EventSystem>();
         pointerEventData = new PointerEventData(eventSystem);
 
-        for (int i = 0; i < totalCount; i++)
+        SetInitColors(colors);
+
+        for (int i = 0; i < colors.Count; i++)
         {
             FrameNode node = Instantiate(frameNodePrefab, transform);
-            node.Init(new FrameNode.InitParam(i, Color.white));
+            node.Init(new FrameNode.InitParam(i, colors[i]));
 
             frameNodes.Add(node);
         }
@@ -96,7 +101,16 @@ public class PaintArea : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             GetComponent<RectTransform>().sizeDelta = new Vector2((cellSizeX + padding.left + padding.right) * totalCount, 315f);
         }
 
+       
         UpdateAllPaints();
+    }
+
+    private void SetInitColors(List<Color> colors)
+    {
+        for (int i = 0; i < colors.Count && i < frameNodes.Count; i++)
+        {
+            frameNodes[i].Paint(colors[i]);
+        }
     }
 
     private void UpdateAllPaints()
@@ -122,5 +136,14 @@ public class PaintArea : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         };
 
         summationView.UpdateView(data);
+    }
+
+    public void DestroyAll()
+    {
+        foreach (FrameNode node in frameNodes)
+        {
+            Destroy(node.gameObject);
+        }
+        frameNodes.Clear();
     }
 }
