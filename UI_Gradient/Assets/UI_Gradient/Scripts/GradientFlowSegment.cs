@@ -3,6 +3,7 @@ using UnityEngine;
 public class GradientFlowSegment : GradientBasicSegment
 {
     [SerializeField] float flowSpeed = 5;
+    private Material gradientMaterialInstance;
 
     protected override void UpdateGrdient()
     {

@@ -1,4 +1,3 @@
-using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +10,11 @@ public class GradientBasicSegment : MonoBehaviour
     [SerializeField] protected float changeTime;
 
     protected float timer;
+
+    protected virtual void Start()
+    {
+        gradientArea.material = Instantiate(gradientArea.material);
+    }
 
     protected virtual void Update()
     {
@@ -35,7 +39,7 @@ public class GradientBasicSegment : MonoBehaviour
 
     protected virtual void UpdateGrdient()
     {
-        if(timer > changeTime)
+        if (timer > changeTime)
         {
             startImage.color = new Color(Random.value, Random.value, Random.value);
             endImage.color = new Color(Random.value, Random.value, Random.value);
