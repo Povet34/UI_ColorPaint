@@ -31,6 +31,11 @@
 
 
 
+### Gradient값을 이용하여 Lerp
+![image](https://github.com/user-attachments/assets/f15537ff-d8a3-439a-94e9-4a4a53967f18)
+![flow](https://github.com/user-attachments/assets/7b1fb861-efb6-44b5-af94-f6e03a2f14e9)
+
+
 
 
 ------
