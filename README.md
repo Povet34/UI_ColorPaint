@@ -26,6 +26,14 @@
 ![flow](https://github.com/user-attachments/assets/27dc91a2-5442-455e-98f7-e7dff7eca14b)
 
 
+### 색상을 0~1이 아니라 -1 ~ 1의 값으로 Gradient를 표현할 수 있도록 변경
+![flow](https://github.com/user-attachments/assets/eebf39cf-db17-448c-b3b0-d1a0c2cf316e)
+
+
+
+
+
+------
 참고할 내용
 - https://www.youtube.com/watch?v=mGd3nYXj1Oc&t=54s
 - https://www.youtube.com/watch?v=OAfpDaAKVSE
