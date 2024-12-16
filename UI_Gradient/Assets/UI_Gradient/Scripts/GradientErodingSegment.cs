@@ -28,7 +28,7 @@ public class GradientErodingSegment : GradientBasicSegment
 
     private float CalcLerp()
     {
-        float uv = Mathf.Clamp01(erodingTimer / erodingTime);
+        float uv = Mathf.Clamp01(erodingTimer / erodingTime) * 2 - 1;
         return uv;
     }
 }
