@@ -1,8 +1,6 @@
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class GradientErodingSegment : GradientBasicSegment
+public class GradientErodingSegment2D : GradientBasicSegment2D
 {
     [SerializeField] float erodingTime = 1;
     float erodingTimer;
@@ -14,14 +12,14 @@ public class GradientErodingSegment : GradientBasicSegment
         if (erodingTimer > erodingTime)
         {
             erodingTimer = 0;
-            gradientArea.material.SetFloat("_ErodingTime", 0);
+            gradientLine.material.SetFloat("_ErodingTime", 0);
         }
 
-        gradientArea.material.SetColor("_StartColor", startImage.color);
-        gradientArea.material.SetColor("_EndColor", endImage.color);
+        gradientLine.material.SetColor("_StartColor", startImage.color);
+        gradientLine.material.SetColor("_EndColor", endImage.color);
 
         float lerp = CalcLerp();
-        gradientArea.material.SetFloat("_ErodingTime", lerp);
+        gradientLine.material.SetFloat("_ErodingTime", lerp);
 
         erodingTimer += Time.deltaTime;
     }

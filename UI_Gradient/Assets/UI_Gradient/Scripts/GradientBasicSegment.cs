@@ -19,7 +19,7 @@ public class GradientBasicSegment : MonoBehaviour
     protected virtual void Update()
     {
         UpdateUIs();
-        UpdateGrdient();
+        UpdateGradient();
     }
 
     protected virtual void UpdateUIs()
@@ -37,7 +37,7 @@ public class GradientBasicSegment : MonoBehaviour
         gradientArea.rectTransform.rotation = Quaternion.Euler(0, 0, angle);
     }
 
-    protected virtual void UpdateGrdient()
+    protected virtual void UpdateGradient()
     {
         if (timer > changeTime)
         {

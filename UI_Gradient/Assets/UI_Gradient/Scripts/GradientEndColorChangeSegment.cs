@@ -5,9 +5,9 @@ public class GradientEndColorChangeSegment : GradientBasicSegment
     [SerializeField] float endColorChangeTime = 1;
     float endColorChangeTimer;
 
-    protected override void UpdateGrdient()
+    protected override void UpdateGradient()
     {
-        base.UpdateGrdient();
+        base.UpdateGradient();
 
         if (endColorChangeTimer > endColorChangeTime)
         {
