@@ -47,6 +47,7 @@ public class ChannelEditPanel : MonoBehaviour
 
     public void StartEdit(int channelIndex, List<Color> colors)
     {
+        gameObject.SetActive(true);
         this.channelIndex = channelIndex;
         paintArea.EditStart(colors);
     }

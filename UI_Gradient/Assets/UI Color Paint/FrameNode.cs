@@ -12,13 +12,14 @@ public partial class FrameNode : MonoBehaviour, IPaintable
     public Color Color { get; set; }
     public int index { get; set; }
 
-    private void Awake()
-    {
-        paintImage = GetComponent<Image>();
-    }
 
     public void Paint(Color color)
     {
+        if(paintImage)
+        {
+            paintImage = GetComponent<Image>();
+        }
+
         paintImage.color = color;
         Color = color;
     }
