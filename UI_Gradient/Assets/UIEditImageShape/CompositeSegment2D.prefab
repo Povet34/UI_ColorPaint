@@ -97,9 +97,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1673095911337096719}
   - component: {fileID: 4897668544897948176}
-  - component: {fileID: 7020801641639616585}
+  - component: {fileID: 2562861886823888455}
+  - component: {fileID: 7510938766231417503}
+  - component: {fileID: 5277982236452080591}
+  - component: {fileID: 5116627054177112199}
   m_Layer: 0
-  m_Name: GradientErodingSegment2D
+  m_Name: CompositeSegment2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -236,7 +239,7 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
---- !u!114 &7020801641639616585
+--- !u!114 &2562861886823888455
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -245,13 +248,62 @@ MonoBehaviour:
   m_GameObject: {fileID: 4387115227484318539}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fc278d5a12a3fb4b8604b6d0ed44e87, type: 3}
+  m_Script: {fileID: 11500000, guid: 1277b3cfd1676d04b8165fe3338c6974, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 0
+  gradientEroding2D: {fileID: 5116627054177112199}
+  gradientFlow2D: {fileID: 5277982236452080591}
+  flicker2D: {fileID: 7510938766231417503}
+  gradientLine: {fileID: 4897668544897948176}
+  changeTime: 5
+--- !u!114 &7510938766231417503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4387115227484318539}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b113cbf0c80415a48ae93430e80aedd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   startImage: {fileID: 5975846581115357713}
   endImage: {fileID: 4810769408010920659}
-  gradientLine: {fileID: 4897668544897948176}
-  changeTime: 1
+  material: {fileID: 2100000, guid: d5dfc679053d55e4b8f7f3d95b10b7dc, type: 2}
+  flickTime: 0
+--- !u!114 &5277982236452080591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4387115227484318539}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00017c816560de045ac0d810de382d3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startImage: {fileID: 5975846581115357713}
+  endImage: {fileID: 4810769408010920659}
+  material: {fileID: 2100000, guid: 0dfbe1e825b558d4e89350f4374e2183, type: 2}
+  flowSpeed: 5
+--- !u!114 &5116627054177112199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4387115227484318539}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050c61b3e5a02cd448d02dfdfdd72ccf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startImage: {fileID: 5975846581115357713}
+  endImage: {fileID: 4810769408010920659}
+  material: {fileID: 2100000, guid: b0ea425faa49ba94b83faa8ce7d49adb, type: 2}
   erodingTime: 1
 --- !u!1 &8651231838359355602
 GameObject:
