@@ -2,12 +2,14 @@ using UnityEngine;
 
 public class GradientEroding2D : BasicSegment2D
 {
-    public override void UpdateGradient(Data data)
+    public override bool UpdateGradient(Data data)
     {
-        base.UpdateGradient(data);
+        bool isDone = base.UpdateGradient(data);
 
         float lerp = CalcLerp();
         render.material.SetFloat("_ErodingTime", lerp);
+
+        return isDone;
     }
 
     private float CalcLerp()

@@ -31,19 +31,16 @@ public class BasicSegment2D : MonoBehaviour
     {
     }
 
-    public virtual void UpdateGradient(Data data)
+    public virtual bool UpdateGradient(Data data)
     {
         this.data = data;
-
-        if (timer > data.changeTime)
-        {
-            timer = 0;
-        }
 
         render.material.SetColor("_StartColor", data.startColor);
         render.material.SetColor("_EndColor", data.endColor);
 
         CalcTime();
+
+        return timer > data.changeTime;
     }
 
     protected virtual void CalcTime()

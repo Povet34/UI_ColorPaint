@@ -2,10 +2,11 @@ using UnityEngine;
 
 public class GradientFlow2D : BasicSegment2D
 {
-    public override void UpdateGradient(Data data)
+    public override bool UpdateGradient(Data data)
     {
-        base.UpdateGradient(data);
-
+        bool isDone = base.UpdateGradient(data);
         render.material.SetFloat("_FlowSpeed", data.speed);
+
+        return isDone;
     }
 }

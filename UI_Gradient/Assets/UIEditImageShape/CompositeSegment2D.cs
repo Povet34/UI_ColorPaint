@@ -50,7 +50,7 @@ public class CompositeSegment2D : MonoBehaviour
     [SerializeField] Flicker2D flicker2D;
     [Header("Renderer"),SerializeField] LineRenderer gradientLine;
 
-    delegate void OnUpdateRender(BasicSegment2D.Data data);
+    delegate bool OnUpdateRender(BasicSegment2D.Data data);
     OnUpdateRender onUpdateRender;
 
     Sequence sequence;
@@ -58,6 +58,11 @@ public class CompositeSegment2D : MonoBehaviour
     public void Start()
     {
         sequence = TestDatas();
+        PlaySequence();
+    }
+
+    void PlaySequence()
+    {
         StartCoroutine(UpdateSequence(sequence));
     }
 
@@ -100,19 +105,13 @@ public class CompositeSegment2D : MonoBehaviour
 
     public IEnumerator UpdateSequence(Sequence sequence)
     {
-        float timer = 0;
         for (int i = 0; i < sequence.GetDatasCount(); i++)
         {
             ChangeSegment(sequence[i].active);
-
-            while (timer < sequence[i].changeTime)
+            while (!onUpdateRender(sequence[i]))
             {
-                onUpdateRender(sequence[i]);
-                timer += Time.deltaTime;
                 yield return null;
             }
-
-            timer = 0f;
         }
     }
 
@@ -152,7 +151,6 @@ public class CompositeSegment2D : MonoBehaviour
             endColor = Color.red,
             changeTime = 5f,
         });
-
 
         return sequence;
     }
