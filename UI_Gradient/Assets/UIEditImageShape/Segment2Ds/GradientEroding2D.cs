@@ -6,21 +6,8 @@ public class GradientEroding2D : BasicSegment2D
     {
         base.UpdateGradient(data);
 
-        if (timer > data.changeTime)
-        {
-            startImage.color = new Color(Random.value, Random.value, Random.value);
-            endImage.color = new Color(Random.value, Random.value, Random.value);
-            timer = 0;
-            render.material.SetFloat("_ErodingTime", 0);
-        }
-
-        render.material.SetColor("_StartColor", startImage.color);
-        render.material.SetColor("_EndColor", endImage.color);
-
         float lerp = CalcLerp();
         render.material.SetFloat("_ErodingTime", lerp);
-        
-        CalcTime();
     }
 
     private float CalcLerp()
