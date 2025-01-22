@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -5,10 +6,11 @@ using UnityEngine.UI;
 
 public class SummationChannel : SummationView
 {
+    [Serializable]
     public class ChannelData
     {
         public int channelIndex;
-        public List<Color> colors;
+        public List<Color32> colors;
         public List<PaletteColor> paletteColors;
         public ChannelEditPanel channelEditPanel;
     }
@@ -37,6 +39,16 @@ public class SummationChannel : SummationView
 
     private void StartEdit()
     {
-        channelEditPanel.StartEdit(channelIndex, colors);
+        ChannelEditPanel.Data data = new ChannelEditPanel.Data();
+        data.colors = colors;
+        data.channelIndex = channelIndex;
+        data.repaintCallback = RepaintTexture;
+        
+        channelEditPanel.StartEdit(data);
+    }
+
+    private void RepaintTexture(List<Color32> colors)
+    {
+        colorViewImage.texture = CreateColorArrayTexture(colors);
     }
 }

@@ -73,7 +73,7 @@ public class PaintArea : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         }
     }
 
-    public void EditStart(List<Color> colors)
+    public void EditStart(List<Color32> colors)
     {
         gameObject.SetActive(true);
 
@@ -105,7 +105,7 @@ public class PaintArea : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         UpdateAllPaints();
     }
 
-    private void SetInitColors(List<Color> colors)
+    private void SetInitColors(List<Color32> colors)
     {
         for (int i = 0; i < colors.Count && i < frameNodes.Count; i++)
         {

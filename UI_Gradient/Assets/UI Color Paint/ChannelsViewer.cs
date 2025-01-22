@@ -7,7 +7,8 @@ public class ChannelsViewer : MonoBehaviour
     [SerializeField] SummationChannel summationChannelPrefab;
     [SerializeField] ChannelEditPanel editPanel;
 
-    private List<SummationChannel> summationChannels = new List<SummationChannel>();
+    int channelIndex = 0;
+    List<SummationChannel> summationChannels = new List<SummationChannel>();
 
     private void Init(List<SummationChannel.ChannelData> channelDatas)
     {
@@ -20,6 +21,7 @@ public class ChannelsViewer : MonoBehaviour
         }
     }
 
+
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Space))
@@ -28,8 +30,8 @@ public class ChannelsViewer : MonoBehaviour
                 {
                     new SummationChannel.ChannelData()
                     {
-                        channelIndex = 1,
-                        colors = new List<Color>()
+                        channelIndex = channelIndex++,
+                        colors = new List<Color32>()
                         {
                             Color.red,
                             Color.green,
@@ -199,8 +201,8 @@ public class ChannelsViewer : MonoBehaviour
                     },
                     new SummationChannel.ChannelData()
                     {
-                        channelIndex = 2,
-                        colors = new List<Color>()
+                        channelIndex = channelIndex++,
+                        colors = new List<Color32>()
                         {
                             Color.red,
                             Color.green,
@@ -243,8 +245,8 @@ public class ChannelsViewer : MonoBehaviour
                     },
                     new SummationChannel.ChannelData()
                     {
-                        channelIndex = 3,
-                        colors = new List<Color>()
+                        channelIndex = channelIndex++,
+                        colors = new List<Color32>()
                         {
                             Color.red,
                             Color.green,

@@ -5,6 +5,14 @@ using UnityEngine.UI;
 
 public class ChannelEditPanel : MonoBehaviour
 {
+    public struct Data
+    {
+        public int channelIndex;
+        public List<Color32> colors;
+        public Action<List<Color32>> repaintCallback;
+    }
+
+
     public static bool Test;
 
     [SerializeField] SummationView summationView;
@@ -13,6 +21,8 @@ public class ChannelEditPanel : MonoBehaviour
 
     [SerializeField] Button saveButton;
     [SerializeField] Button cancelButton;
+
+    Action<List<Color32>> repaintCallback;
 
     int channelIndex;
 
@@ -28,7 +38,7 @@ public class ChannelEditPanel : MonoBehaviour
 
     private void SaveEdit()
     {
-        List<Color> colors = summationView.GetColors();
+        List<Color32> colors = summationView.GetColors();
         List<PaletteColor> paletteColors = palette.GetPaletteColors();
 
         SummationChannel.ChannelData channelData = new SummationChannel.ChannelData();
@@ -43,12 +53,17 @@ public class ChannelEditPanel : MonoBehaviour
         System.IO.File.WriteAllText(path, json);
 
         paintArea.DestroyAll();
+        gameObject.SetActive(false);
+
+        repaintCallback?.Invoke(colors);
     }
 
-    public void StartEdit(int channelIndex, List<Color> colors)
+    public void StartEdit(Data data)
     {
         gameObject.SetActive(true);
-        this.channelIndex = channelIndex;
-        paintArea.EditStart(colors);
+        channelIndex = data.channelIndex;
+        paintArea.EditStart(data.colors);
+
+        repaintCallback = data.repaintCallback;
     }
 }

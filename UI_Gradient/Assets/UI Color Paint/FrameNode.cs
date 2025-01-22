@@ -9,13 +9,13 @@ public partial class FrameNode : MonoBehaviour, IPaintable
     Image paintImage;
 
 
-    public Color Color { get; set; }
+    public Color32 Color { get; set; }
     public int index { get; set; }
 
 
-    public void Paint(Color color)
+    public void Paint(Color32 color)
     {
-        if(paintImage)
+        if(!paintImage)
         {
             paintImage = GetComponent<Image>();
         }
