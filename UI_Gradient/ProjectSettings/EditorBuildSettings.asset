@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/LocalData/LocalData.unity
     guid: fb6676406ced18242ae8b5dbd7a91717
+  - enabled: 1
+    path: Assets/Sequence/Sequence.unity
+    guid: 494b7a7a787508b4bb757c831da4e4a5
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

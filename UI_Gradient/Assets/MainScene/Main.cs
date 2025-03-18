@@ -7,6 +7,8 @@ public class Main : MonoBehaviour
     [SerializeField] Button editImageButton;
     [SerializeField] Button gradientButton;
     [SerializeField] Button paintFrameButton;
+    [SerializeField] Button localDataTestButton;
+    [SerializeField] Button sequenceButton;
     [SerializeField] Button goMainButton;
 
     void Start()
@@ -14,31 +16,24 @@ public class Main : MonoBehaviour
         editImageButton.onClick.AddListener(GoEditImage);
         gradientButton.onClick.AddListener(GoGradient);
         paintFrameButton.onClick.AddListener(GoPaintFrame);
-        goMainButton.onClick.AddListener(GoMain);
+        localDataTestButton.onClick.AddListener(GoLocalData);
+        sequenceButton.onClick.AddListener(GoSequence);
 
+        goMainButton.onClick.AddListener(GoMain);
         DontDestroyOnLoad(gameObject);
     }
 
     private void Update()
     {
-        if (SceneManager.GetActiveScene().name == "EditImage"||
-            SceneManager.GetActiveScene().name == "UI Gradient" ||
-            SceneManager.GetActiveScene().name == "UI Paint")
-        {
-            editImageButton.gameObject.SetActive(false);
-            gradientButton.gameObject.SetActive(false);
-            paintFrameButton.gameObject.SetActive(false);
+        bool isMain = SceneManager.GetActiveScene().name != "MainScene";
 
-            goMainButton.gameObject.SetActive(true);
-        }
-        else
-        {
-            editImageButton.gameObject.SetActive(true);
-            gradientButton.gameObject.SetActive(true);
-            paintFrameButton.gameObject.SetActive(true);
+        editImageButton.gameObject.SetActive(!isMain);
+        gradientButton.gameObject.SetActive(!isMain);
+        paintFrameButton.gameObject.SetActive(!isMain);
+        localDataTestButton.gameObject.SetActive(!isMain);
+        sequenceButton.gameObject.SetActive(!isMain);
 
-            goMainButton.gameObject.SetActive(false);
-        }
+        goMainButton.gameObject.SetActive(isMain);
     }
 
     void GoEditImage()
@@ -54,6 +49,16 @@ public class Main : MonoBehaviour
     void GoPaintFrame()
     {
         SceneManager.LoadScene("UI Paint");
+    }
+
+    void GoLocalData()
+    {
+        SceneManager.LoadScene("LocalData");
+    }
+
+    void GoSequence()
+    {
+        SceneManager.LoadScene("Sequence");
     }
 
     void GoMain()
