@@ -38,7 +38,12 @@
 
 ### Sequence Group
 1.  Sequence Group이란, 하나 이상의 Channel을 가지고, 특정 방향성으로 재정렬된 채널들의 그룹을 말함.
-2.  
+2.  Channel은 하나의 Sequence Group에만 종속될 수 있음.
+     - Channel A가 group a에 종속이었다가, group b로 그룹을 묶으려고할 때는 어떻게 처리될 것인가?
+     - 그룹의 생성/삭제, 채널의 생성/삭제의 Input Event는 어떤것이 있을지. (마우스로, 아니면 하이어라키로.)
+     - 
+4.  Sequence Group의 이름을 지정할수 있음.(중요도 하)
+5.  
 
 
 ------
