@@ -36,6 +36,9 @@
 ![flow](https://github.com/user-attachments/assets/7b1fb861-efb6-44b5-af94-f6e03a2f14e9)
 
 
+### Sequence Group
+1.  Sequence Group이란, 하나 이상의 Channel을 가지고, 특정 방향성으로 재정렬된 채널들의 그룹을 말함.
+2.  
 
 
 ------
